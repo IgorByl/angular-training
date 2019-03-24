@@ -7,14 +7,14 @@
        <li><a routerLink="/about">About</a></li>
   </ul>
 </nav>
-
+-->
 <section>
   <p>Username: <input type='text' [(ngModel)]='userName'/></p>
   <button (click)='search()'>click for avatar</button>
   <div *ngIf='responce'>
     <img src='{{responce.avatar_url}}' alt='userAvatar'/>
   </div>
-</section> -->
+</section> 
 
 <app-my-new></app-my-new>
 

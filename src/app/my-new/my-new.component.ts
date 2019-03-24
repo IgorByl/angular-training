@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyNewComponent implements OnInit {
   time: string;
-  items: string[] = ['Angular', 'React', 'Node.js', 'Vue'];
+  items: string[];
   loggedIn: boolean = true;
   text: string = 'Hello!';
   isVisible: boolean = false;
@@ -15,6 +15,10 @@ export class MyNewComponent implements OnInit {
     setInterval(() => {
       this.time = new Date().toLocaleTimeString();
     }, 1000);
+  }
+
+  ngOnInit() {
+    this.items = ['Angular', 'React', 'Node.js', 'Vue'];
   }
 
   toggleCollapse() {
@@ -25,5 +29,7 @@ export class MyNewComponent implements OnInit {
     this.isVisible = !this.isVisible;
   }
 
-  ngOnInit() {}
+  addLib(value) {
+    this.items.push(value);
+  }
 }

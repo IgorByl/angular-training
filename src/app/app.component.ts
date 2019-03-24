@@ -3,8 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
 })
 export class AppComponent {
-  title = 'My First Angular App!';
+  title: string = 'My First Angular App!';
+  // navList: object = {
+  //   '': 'Main',
+  //   '/news': 'News',
+  //   '/prise': 'Prise',
+  //   '/about': 'About',
+  // };
 }

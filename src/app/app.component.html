@@ -8,6 +8,14 @@
   </ul>
 </nav>
 
+<section>
+  <p>Username: <input type='text' [(ngModel)]='userName'/></p>
+  <button (click)='search()'>click for avatar</button>
+  <div *ngIf='responce'>
+    <img src='{{responce.avatar_url}}' alt='userAvatar'/>
+  </div>
+</section>
+
 <!-- <app-my-new></app-my-new> -->
 
 <router-outlet></router-outlet>

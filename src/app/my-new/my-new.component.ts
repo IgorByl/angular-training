@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetRequestService } from '../get-request.service';
 
 @Component({
   selector: 'app-my-new',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-new.component.less'],
 })
 export class MyNewComponent implements OnInit {
+  public employees: Array<object>;
   time: string;
   items: string[];
   loggedIn: boolean = true;
   text: string = 'Hello!';
   isVisible: boolean = false;
-  constructor() {
+  constructor(private employeeService: GetRequestService) {
     setInterval(() => {
       this.time = new Date().toLocaleTimeString();
     }, 1000);
@@ -19,6 +21,7 @@ export class MyNewComponent implements OnInit {
 
   ngOnInit() {
     this.items = ['Angular', 'React', 'Node.js', 'Vue'];
+    this.employees = this.employeeService.getEmploeers();
   }
 
   toggleCollapse() {

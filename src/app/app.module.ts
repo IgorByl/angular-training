@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NewsComponent } from './news/news.component';
 
 import { NewServiceService } from './new-service.service';
+import { GetRequestService } from './get-request.service';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { NewServiceService } from './new-service.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [NewServiceService],
+  providers: [NewServiceService, GetRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

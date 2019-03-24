@@ -1,7 +1,7 @@
 <div [class.wrapper]="true">
   <form (submit)='addLib(libs.value)'>
     <label for='libs'>Список фреймворков</label>
-    <input type='text' id='libs' #libs placeholder="добавить фреймворк"/>
+    <input type='text' id='libs' #libs placeholder="добавить фреймворк" name='libName'/>
     <button type='submit'>add library</button>
   </form>
 
@@ -41,4 +41,6 @@
   </div>
   <button (click)='toggleVisibility()'>click</button>
 </div> -->
+
+<li *ngFor="let item of employees;">{{item.age}} {{item.name}}</li>
 </div>

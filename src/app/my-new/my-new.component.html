@@ -1,0 +1,44 @@
+<p>
+  Here it is:
+</p>
+<ul>
+  <ng-template
+    ngFor
+    let-item
+    [ngForOf]="items"
+    let-i="index"
+    [ngForTrackBy]="trackByFn"
+  >
+    <li>{{ i + 1 }} - {{ item }}</li>
+  </ng-template>
+</ul>
+
+<p>{{ time }}</p>
+
+<div *ngIf="loggedIn; then thenBlock; else elseBlock"></div>
+<br />
+<ng-template #thenBlock>Loged in.</ng-template>
+<ng-template #elseBlock>Login in, please.</ng-template>
+<!-- <button (click)="toggleCollapse()">{{ loggedIn ? 'hide' : 'show' }}</button> -->
+<button (click)="loggedIn = !loggedIn">{{ loggedIn ? 'hide' : 'show' }}</button>
+<p>loggedIn = {{ loggedIn }}</p>
+
+<input type="text" [(ngModel)]="text" />
+<p>{{ text }}</p>
+
+<div [class.class1]="true">
+  Lorem, ipsum.
+  <p [ngClass]="{ class2: true }">Lorem ipsum dolor sit amet.</p>
+  <p [ngStyle]="{ color: 'blue', 'text-decoration': 'underline' }">
+    Lorem ipsum dolor sit amet.
+  </p>
+</div>
+
+<div [ngClass]="{visability:isVisible}" [ngStyle]="{'border':'1px solid black'}">
+    Lorem, ipsum.
+    <p [ngClass]="{ class2: true }">Lorem ipsum dolor sit amet.</p>
+    <p [ngStyle]="{ color: 'blue', 'text-decoration': 'underline' }">
+      Lorem ipsum dolor sit amet.
+    </p>
+  </div>
+  <button (click)='toggleVisibility()'>click</button>
